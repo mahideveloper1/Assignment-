@@ -228,3 +228,64 @@ body {
   padding: 10px; /* Optional padding for better spacing */
   border-bottom: 1px solid #e0e0e0; /* Optional border between items */
 }
+
+/* Patient List Styles */
+.patient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Patient List Item Styles */
+.patient-item {
+  display: flex; /* Align items horizontally */
+  align-items: flex-start; /* Align items at the start */
+  margin-bottom: 20px; /* Space between list items */
+  padding: 10px; /* Padding around each item */
+  border-bottom: 1px solid #e0e0e0; /* Border for separation */
+}
+
+/* Patient Image Styles */
+.patient-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* Make image circular */
+  background: transparent;
+  margin-right: 15px; /* Space between image and text */
+  opacity: 1;
+}
+
+/* Patient Info Styles */
+.patient-info {
+  display: flex;
+  flex-direction: column; /* Align text elements vertically */
+  justify-content: center; /* Center align text vertically */
+}
+
+/* Patient Name Styles */
+.patient-name {
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  margin-bottom: 5px; /* Space between name and details */
+  opacity: 1;
+}
+
+/* Three-Dot Image Styles */
+.more-options {
+  width: 18px;
+  height: 18px;
+  background: transparent url("img/more_horiz_FILL0_wght300_GRAD0_opsz24.png")
+    no-repeat center center;
+  background-size: cover;
+  margin-bottom: 5px; /* Space between three-dot image and details */
+  opacity: 1;
+}
+
+/* Patient Details Styles */
+.patient-details {
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+}
