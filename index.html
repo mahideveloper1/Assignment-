@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Main content area -->
+      <main class="main-content">
+        <!-- Top navigation bar -->
+        <nav class="navbar">
+    <div class="navbar-left">
+        <img src="Icon.png/TestLogo.svg" alt="Logo" class="navbar-logo">
+    </div>
+
+    <div class="navbar-center">
+        <ul>
+            <li>
+                <img src="Icon.png/home_icon.svg" alt="Home Logo" class="home-logo">
+                <a><i class="icon-overview"></i>Overview</a>
+            </li>
+            <li>
+                <img src="Icon.png/patient.svg" alt="patient Logo" class="pateint-logo">
+                <a><i class="icon-overview"></i>Patients</a>
+            </li>
+            <li>
+                <img src="Icon.png/calender.svg" alt="calender Logo" class="calender-logo">
+                <a><i class="icon-overview"></i>Schedule</a>
+            </li>
+            <li>
+                <img src="Icon.png/chat_bubble.svg" alt="chat Logo" class="chat-logo">
+                <a><i class="icon-overview"></i>Message</a>
+            </li>
+            <li>
+                <img src="Icon.png/credit_card.svg" alt="credit Logo" class="credit-logo">
+                <a><i class="icon-overview"></i>Transactions</a>
+            </li>
+            
+        </ul>
+    </div>
+
+    <div class="navbar-right">
+        <img src="Icon.png/senior-woman-doctor.png" alt="Doctor Photo" class="doctor-photo">
+        <span>Dr. Jose Simmons</span>
+        <span class="doctor-title">General Practitioner</span>
+        <img src="Icon.png/settings.svg" alt="Settings" class="settings-icon">
+        <img src="Icon.png/more_vert.svg" alt="More" class="more_vert">
+    </div>
+</nav>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-heading">Patients</span>
+    <img src="Icon.png/search.svg" alt="Search Icon" class="search-icon">
+  </div>
+  <!-- Patient list will go here -->
+  <ul class="patient-list">
+    <!-- Example list items -->
+    <li>Patient 1</li>
+    <li>Patient 2</li>
+    <li>Patient 3</li>
+    <!-- Add more patients as needed -->
+  </ul>
+</div>
+
+        
+
+    <script>
+      import Chart from "chart.js/auto";
+
+      // Fetching Jessica Taylor's data
+      fetch(
+        "https://fedskillstest.coalitiontechnologies.workers.dev/patient/jessica-taylor"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const patient = data[0]; // Assuming the first object in the array is the one needed
+          const diagnosisHistory = patient.diagnosis_history;
+
+          // Extract systolic, diastolic, and month values
+          const systolic = diagnosisHistory.map(
+            (entry) => entry.blood_pressure.systolic.value
+          );
+          const diastolic = diagnosisHistory.map(
+            (entry) => entry.blood_pressure.diastolic.value
+          );
+          const months = diagnosisHistory.map((entry) => entry.month);
+
+          // Create the chart for Blood Pressure
+          const ctx = document
+            .getElementById("bloodPressureChart")
+            .getContext("2d");
+          new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: months, // X-axis labels (Months)
+              datasets: [
+                {
+                  label: "Systolic",
+                  data: systolic,
+                  borderColor: "rgb(255, 99, 132)",
+                  fill: false,
+                },
+                {
+                  label: "Diastolic",
+                  data: diastolic,
+                  borderColor: "rgb(54, 162, 235)",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: "Month",
+                  },
+                },
+                y: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: "Blood Pressure (mmHg)",
+                  },
+                  suggestedMin: 50,
+                  suggestedMax: 200,
+                },
+              },
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+
+    </script>
+  </body>
+</html>

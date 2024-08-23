@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar for patient list -->
+      <aside class="sidebar">
+        <div class="logo">
+          <h2>Tech.Care</h2>
+        </div>
+        <div class="patient-list">
+          <h3>Patients</h3>
+          <ul>
+            <!-- Highlight Jessica Taylor -->
+            <li class="active">
+              <span class="patient-name">Jessica Taylor</span>
+              <span class="patient-age">Female, 28</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="main-content">
+        <!-- Top navigation bar -->
+        <nav class="navbar">
+          <div class="navbar-left">
+            <img src="logo.png" alt="Logo" class="navbar-logo" />
+          </div>
+
+          <div class="navbar-center">
+            <ul>
+              <li>
+                <a href="#overview"><i class="icon-overview"></i>Overview</a>
+              </li>
+              <li>
+                <a href="#patients"><i class="icon-patients"></i>Patients</a>
+              </li>
+              <li>
+                <a href="#schedule"><i class="icon-schedule"></i>Schedule</a>
+              </li>
+              <li>
+                <a href="#message"><i class="icon-message"></i>Message</a>
+              </li>
+              <li>
+                <a href="#transactions"
+                  ><i class="icon-transactions"></i>Transactions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-right">
+            <img
+              src="doctor-photo.png"
+              alt="Doctor Photo"
+              class="doctor-photo"
+            />
+            <span>Dr. Jose Simmons</span>
+            <i class="icon-settings"></i>
+          </div>
+        </nav>
+
+        <!-- Diagnosis History Section -->
+        <section class="diagnosis-history">
+          <h3>Diagnosis History</h3>
+          <canvas id="bloodPressureChart"></canvas>
+          <div class="vital-stats">
+            <div class="stat">
+              <h4>Respiratory Rate</h4>
+              <p>20 bpm</p>
+            </div>
+            <div class="stat">
+              <h4>Temperature</h4>
+              <p>98.6°F</p>
+            </div>
+            <div class="stat">
+              <h4>Heart Rate</h4>
+              <p>78 bpm</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diagnostic List Section -->
+        <section class="diagnostic-list">
+          <h3>Diagnostic List</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Problem/Diagnosis</th>
+                <th>Description</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="diagnostic-list">
+              <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      <!-- Right sidebar for patient details and lab results -->
+      <aside class="patient-details">
+        <div class="patient-info">
+          <h3>Jessica Taylor</h3>
+          <p><strong>Date of Birth:</strong> August 23, 1996</p>
+          <p><strong>Gender:</strong> Female</p>
+          <p><strong>Contact Info:</strong> (415) 555-1234</p>
+          <p><strong>Emergency Contact:</strong> (415) 555-5678</p>
+          <p><strong>Insurance Provider:</strong> Sunrise Health Assurance</p>
+          <button>Show All Information</button>
+        </div>
+
+        <div class="lab-results">
+          <h3>Lab Results</h3>
+          <ul>
+            <li>Blood Tests <a href="#">Download</a></li>
+            <li>CT Scans <a href="#">Download</a></li>
+            <li>Radiology Reports <a href="#">Download</a></li>
+            <li>X-Rays <a href="#">Download</a></li>
+            <li>Urine Test <a href="#">Download</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      import Chart from "chart.js/auto";
+
+      // Fetching Jessica Taylor's data
+      fetch(
+        "https://fedskillstest.coalitiontechnologies.workers.dev/patient/jessica-taylor"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const patient = data[0]; // Assuming the first object in the array is the one needed
+          const diagnosisHistory = patient.diagnosis_history;
+
+          // Extract systolic, diastolic, and month values
+          const systolic = diagnosisHistory.map(
+            (entry) => entry.blood_pressure.systolic.value
+          );
+          const diastolic = diagnosisHistory.map(
+            (entry) => entry.blood_pressure.diastolic.value
+          );
+          const months = diagnosisHistory.map((entry) => entry.month);
+
+          // Create the chart for Blood Pressure
+          const ctx = document
+            .getElementById("bloodPressureChart")
+            .getContext("2d");
+          new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: months, // X-axis labels (Months)
+              datasets: [
+                {
+                  label: "Systolic",
+                  data: systolic,
+                  borderColor: "rgb(255, 99, 132)",
+                  fill: false,
+                },
+                {
+                  label: "Diastolic",
+                  data: diastolic,
+                  borderColor: "rgb(54, 162, 235)",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: "Month",
+                  },
+                },
+                y: {
+                  display: true,
+                  title: {
+                    display: true,
+                    text: "Blood Pressure (mmHg)",
+                  },
+                  suggestedMin: 50,
+                  suggestedMax: 200,
+                },
+              },
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+
+      //     // Populate diagnostic list
+      //     const diagnosticList = document.getElementById("diagnostic-list");
+      //     data.diagnoses.forEach((diagnosis) => {
+      //       const row = document.createElement("tr");
+      //       row.innerHTML = `
+      //                   <td>${diagnosis.problem}</td>
+      //                   <td>${diagnosis.description}</td>
+      //                   <td>${diagnosis.status}</td>
+      //               `;
+      //       diagnosticList.appendChild(row);
+      //     });
+      //   })
+      //   .catch((error) => console.error("Error fetching data:", error));
+    </script>
+  </body>
+</html>

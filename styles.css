@@ -1,0 +1,230 @@
+/* Whole Page Background */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  /* height: 100vh; */
+  background: #f6f7f8;
+  /* overflow: hidden; */
+}
+
+/* General Navbar Styles */
+.navbar {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 1450px; /* Adjust to fit within viewport */
+  height: 72px;
+  background: #ffffff;
+  border-radius: 70px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  overflow: hidden; /* Prevents scrollbars within the navbar */
+}
+
+/* Navbar Center Styles */
+.navbar-center {
+  position: absolute;
+  top: 5px;
+  left: 473px;
+  width: calc(100% - 946px); /* Adjust to fit within viewport */
+  height: 63px;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  overflow: hidden; /* Prevents scrollbars within the navbar center */
+}
+
+/* Navbar Left Styles */
+.navbar-left .navbar-logo {
+  width: auto;
+  height: 100%;
+}
+
+/* Navbar Center Options */
+.navbar-center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-center ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-center ul li a {
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center ul li img {
+  margin-right: 8px;
+}
+
+/* Navbar Right Styles */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  overflow: hidden; /* Prevents scrollbars within the navbar right section */
+}
+
+.navbar-right .doctor-photo {
+  width: 44px;
+  height: 44px;
+  /* background: transparent url("Icon.png/senior-woman-doctor.png") no-repeat
+    center center; */
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.navbar-right .doctor-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.navbar-right .doctor-name {
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  margin-bottom: 2px; /* Space between name and title */
+}
+
+.navbar-right .doctor-title {
+  position: absolute;
+  top: 42px;
+  left: 1312px;
+  width: 129px;
+  height: 19px;
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+  text-align: left;
+}
+
+.navbar-right .settings-icon,
+.navbar-right .more_vert {
+  width: 19px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+.navbar-right .more_vert {
+  width: 4px;
+  height: 18px;
+  background-image: url("Icon.png/more_vert.svg");
+}
+
+/* Icon-Specific Styles */
+.home-logo {
+  width: 16px;
+  height: 17px;
+  /* background: transparent url("img/home_FILL0_wght300_GRAD0_opsz24.png")
+    no-repeat center center; */
+  background-size: cover;
+}
+
+.patient-logo {
+  width: 24px;
+  height: 17px;
+  /* background: transparent url("img/group_FILL0_wght300_GRAD0_opsz24.png")
+    no-repeat center center; */
+  background-size: cover;
+}
+
+.calender-logo {
+  width: 15px;
+  height: 17px;
+  /* background: transparent
+    url("img/calendar_today_FILL0_wght300_GRAD0_opsz24.png") no-repeat center
+    center; */
+  background-size: cover;
+}
+
+.chat-logo {
+  width: 19px;
+  height: 17px;
+  /* background: transparent url("img/chat_bubble_FILL0_wght300_GRAD0_opsz24.png")
+    no-repeat center center; */
+  background-size: cover;
+}
+
+.credit-logo {
+  width: 22px;
+  height: 17px;
+  /* background: transparent url("img/credit_card_FILL0_wght300_GRAD0_opsz24.png")
+    no-repeat center center; */
+  background-size: cover;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: absolute;
+  top: 122px;
+  bottom: 100px;
+  left: 18px;
+  width: 367px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  opacity: 1;
+  padding: 20px; /* Optional padding for internal spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  overflow-y: auto; /* Allows scrolling if content exceeds height */
+}
+
+/* Sidebar Header Styles */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.sidebar-heading {
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  text-align: left;
+  margin-right: 10px; /* Space between heading and icon */
+}
+
+.search-icon {
+  position: absolute; /* Absolute positioning */
+  top: 30px; /* Adjust according to the container's height */
+  left: 347px; /* Adjust according to the container's width */
+  width: 18px;
+  height: 18px;
+  /* background-size: cover; */
+  opacity: 1;
+}
+
+/* Patient List Styles */
+.patient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.patient-list li {
+  font: normal normal 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  margin-bottom: 10px; /* Space between list items */
+  padding: 10px; /* Optional padding for better spacing */
+  border-bottom: 1px solid #e0e0e0; /* Optional border between items */
+}
