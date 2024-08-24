@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container"> -->
       
       <!-- Main content area -->
       <main class="main-content">
@@ -53,99 +53,154 @@
         <img src="Icon.png/settings.svg" alt="Settings" class="settings-icon">
         <img src="Icon.png/more_vert.svg" alt="More" class="more_vert">
     </div>
-</nav>
+  </nav>
 
-<div class="sidebar">
+  <div class="sidebar">
   <div class="sidebar-header">
     <span class="sidebar-heading">Patients</span>
     <img src="Icon.png/search.svg" alt="Search Icon" class="search-icon">
   </div>
-  <!-- Patient list will go here -->
+  <!-- Patient list  -->
   <ul class="patient-list">
     <li class="patient-item">
-        <img src="Icon.png/Layer 10@2x.png" alt="Patient Image" class="patient-image">
+        <img src="Icon.png/Layer 8@2x.png" alt="Patient Image" class="patient-image">
         <div class="patient-info">
-            <span class="patient-name">Jane Doe</span>
-            <img src="Icon.png/more_horiz.svg" alt="More Options" class="more-options">
+            <span class="patient-name">Emilly Williams</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
             <span class="patient-details">Female: 18</span>
         </div>
     </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 1@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Ryan Johnson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 45</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 3@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Brandon Mitchell</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 36</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 2@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">jessica Taylor</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 28</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 6@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Samantha Johnson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 56</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 12@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Ashley Martinez</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 54</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 10@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Olivia Brown</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 32</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 9@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Tyler Davis</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 19</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 4@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Kevin Anderson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 30</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 5@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Dylan Thompson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 36</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 7@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Nathan Evans</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 58</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/pexels-photo.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Mike Nolan</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 31</span>
+        </div>
+    </li>
     
-</ul>
+  </ul>
 </div>
 
-        
-
+       <div class="right-sidebar">
+        <img id="profile-photo" src="Icon.png/Layer 2@2x.png" alt="Profile Photo" class="profile-photo">
+        <h3 id="profile-name" class="profile-name"></h3>
+        <p><strong>Date of Birth:</strong> <span id="dob" class="info"></span></p>
+        <p><strong>Gender:</strong> <span id="gender" class="info"></span></p>
+        <p><strong>Contact Info:</strong> <span id="contact-info" class="info"></span></p>
+        <p><strong>Emergency Contact:</strong> <span id="emergency-contact" class="info"></span></p>
+        <p><strong>Insurance Provider:</strong> <span id="insurance-provider" class="info"></span></p>
+        <button class="info-button">Show All Information</button>
+    </div>
+    
     <script>
-      import Chart from "chart.js/auto";
-
-      // Fetching Jessica Taylor's data
-      fetch(
-        "https://fedskillstest.coalitiontechnologies.workers.dev/patient/jessica-taylor"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const patient = data[0]; // Assuming the first object in the array is the one needed
-          const diagnosisHistory = patient.diagnosis_history;
-
-          // Extract systolic, diastolic, and month values
-          const systolic = diagnosisHistory.map(
-            (entry) => entry.blood_pressure.systolic.value
-          );
-          const diastolic = diagnosisHistory.map(
-            (entry) => entry.blood_pressure.diastolic.value
-          );
-          const months = diagnosisHistory.map((entry) => entry.month);
-
-          // Create the chart for Blood Pressure
-          const ctx = document
-            .getElementById("bloodPressureChart")
-            .getContext("2d");
-          new Chart(ctx, {
-            type: "line",
-            data: {
-              labels: months, // X-axis labels (Months)
-              datasets: [
-                {
-                  label: "Systolic",
-                  data: systolic,
-                  borderColor: "rgb(255, 99, 132)",
-                  fill: false,
-                },
-                {
-                  label: "Diastolic",
-                  data: diastolic,
-                  borderColor: "rgb(54, 162, 235)",
-                  fill: false,
-                },
-              ],
-            },
-            options: {
-              responsive: true,
-              scales: {
-                x: {
-                  display: true,
-                  title: {
-                    display: true,
-                    text: "Month",
-                  },
-                },
-                y: {
-                  display: true,
-                  title: {
-                    display: true,
-                    text: "Blood Pressure (mmHg)",
-                  },
-                  suggestedMin: 50,
-                  suggestedMax: 200,
-                },
-              },
-            },
-          });
+      // Fetching data from the API
+      fetch("https://fedskillstest.coalitiontechnologies.workers.dev/patient")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
         })
-        .catch((error) => {
+        .then(data => {
+          if (data.length > 0) {
+            const patient = data[0]; // Assuming the first object in the array is the one needed
+            // Update HTML with fetched data
+            document.getElementById('profile-photo').src = patient.profile_picture;
+            document.getElementById('profile-name').textContent = patient.name;
+            document.getElementById('dob').textContent = new Date(patient.date_of_birth).toLocaleDateString('en-US');
+            document.getElementById('gender').textContent = patient.gender;
+            document.getElementById('contact-info').textContent = patient.phone_number;
+            document.getElementById('emergency-contact').textContent = patient.emergency_contact;
+            document.getElementById('insurance-provider').textContent = patient.insurance_type;
+          } else {
+            console.error("No patient data found.");
+          }
+        })
+        .catch(error => {
           console.error("Error fetching data:", error);
         });
+    </script>
 
     </script>
   </body>
