@@ -296,8 +296,8 @@ body {
   position: absolute;
   top: 108px;
   left: 1216px;
-  width: 367px;
-  height: 740px;
+  width: 240px;
+  height: 540px;
   background: #ffffff;
   border-radius: 16px;
   padding: 20px;
@@ -361,4 +361,246 @@ p {
 /* Button hover state */
 .info-button:hover {
   background: #00d4c0; /* Slightly darker shade for hover effect */
+}
+
+.lab-results-sidebar {
+  position: absolute;
+  top: 880px;
+  left: 1215px;
+  width: 367px;
+  height: 296px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-heading {
+  font: normal normal 800 24px/33px Manrope;
+  color: #072635;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.result-text {
+  font: normal normal normal 13px/18px Manrope;
+  color: #072635;
+}
+
+.result-icon {
+  width: 20px;
+  height: 20px;
+  background: url("Icon.png/download.svg") no-repeat center center;
+  background-size: contain;
+}
+
+/* Main Card */
+.big-card {
+  margin-top: 120px;
+  margin-left: 435px;
+  width: 766px;
+  height: 873px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #744141 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
+}
+
+h2 {
+  margin-top: 108px;
+  margin-left: 12px;
+  padding-top: 16px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
+    var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+  text-align: left;
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: 0px;
+  color: #0f1010;
+  opacity: 1;
+}
+
+.diagnosis-card {
+  position: absolute;
+  top: 215px;
+  margin-left: 19px;
+  width: 726px;
+  height: 508px;
+  background: #f4f0fe 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 6 Months Text */
+.blood-pressure-header p {
+  position: absolute;
+  top: 236px;
+  left: 772px;
+  width: 92px;
+  height: 19px;
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  text-align: right;
+  opacity: 1;
+}
+
+/* Systolic Box */
+.systolic-box {
+  position: absolute;
+  top: 231px;
+  left: 939px;
+  width: 149px;
+  height: 84px;
+  background-color: #fff;
+  border-radius: 8px;
+  opacity: 1;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Diastolic Box */
+.diastolic-box {
+  position: absolute;
+  top: 348px;
+  left: 939px;
+  width: 145px;
+  height: 84px;
+  background-color: #fff;
+  border-radius: 8px;
+  opacity: 1;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Number in Both Boxes */
+.systolic-value,
+.diastolic-value {
+  position: absolute;
+  top: 375px;
+  left: 939px;
+  width: 25px;
+  height: 30px;
+  font: normal normal bold 22px/30px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  text-align: left;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+/* Graph */
+.blood-pressure-chart {
+  position: absolute;
+  top: 283px;
+  left: 483px;
+  width: 417px;
+  height: 187px;
+  opacity: 1;
+}
+
+/* First Graph Line (Systolic) */
+.systolic-line {
+  position: absolute;
+  top: 314px;
+  left: 492px;
+  width: 408px;
+  height: 77px;
+  border: 2px solid #c26eb4;
+  opacity: 1;
+}
+
+/* Second Graph Line (Diastolic) */
+.diastolic-line {
+  position: absolute;
+  top: 393px;
+  left: 492px;
+  width: 405px;
+  height: 69px;
+  border: 2px solid #7e6cab;
+  opacity: 1;
+}
+
+.respirator-card {
+  position: absolute;
+  top: 733px;
+  left: 437px;
+  width: 207px;
+  height: auto;
+  font-family: "Manrope", sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+}
+
+.temp-card {
+  margin-top: 533px;
+  margin-left: 286px;
+  width: 228px;
+  height: 200px;
+  background: #ffe6e9 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+}
+
+.heart-card {
+  margin-top: 533px;
+  left: 935px;
+  width: 228px;
+  height: 200px;
+  background: #ffe6f1 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+}
+.respirator-image {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 10px;
+}
+
+.respirator-heading {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #072635;
+  margin-bottom: 5px;
+}
+
+.respirator-rate {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #072635;
+  margin-bottom: 5px;
+}
+
+.respirator-status {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #072635;
+  opacity: 0.8;
+}
+
+.three-cards {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing between cards */
+  gap: 20px; /* Adjust the gap between the cards */
 }

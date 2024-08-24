@@ -10,212 +10,296 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div class="container">
-      <!-- Sidebar for patient list -->
-      <aside class="sidebar">
-        <div class="logo">
-          <h2>Tech.Care</h2>
-        </div>
-        <div class="patient-list">
-          <h3>Patients</h3>
-          <ul>
-            <!-- Highlight Jessica Taylor -->
-            <li class="active">
-              <span class="patient-name">Jessica Taylor</span>
-              <span class="patient-age">Female, 28</span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
+    <!-- <div class="container"> -->
+      
       <!-- Main content area -->
       <main class="main-content">
         <!-- Top navigation bar -->
         <nav class="navbar">
-          <div class="navbar-left">
-            <img src="logo.png" alt="Logo" class="navbar-logo" />
-          </div>
-
-          <div class="navbar-center">
-            <ul>
-              <li>
-                <a href="#overview"><i class="icon-overview"></i>Overview</a>
-              </li>
-              <li>
-                <a href="#patients"><i class="icon-patients"></i>Patients</a>
-              </li>
-              <li>
-                <a href="#schedule"><i class="icon-schedule"></i>Schedule</a>
-              </li>
-              <li>
-                <a href="#message"><i class="icon-message"></i>Message</a>
-              </li>
-              <li>
-                <a href="#transactions"
-                  ><i class="icon-transactions"></i>Transactions</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="navbar-right">
-            <img
-              src="doctor-photo.png"
-              alt="Doctor Photo"
-              class="doctor-photo"
-            />
-            <span>Dr. Jose Simmons</span>
-            <i class="icon-settings"></i>
-          </div>
-        </nav>
-
-        <!-- Diagnosis History Section -->
-        <section class="diagnosis-history">
-          <h3>Diagnosis History</h3>
-          <canvas id="bloodPressureChart"></canvas>
-          <div class="vital-stats">
-            <div class="stat">
-              <h4>Respiratory Rate</h4>
-              <p>20 bpm</p>
-            </div>
-            <div class="stat">
-              <h4>Temperature</h4>
-              <p>98.6°F</p>
-            </div>
-            <div class="stat">
-              <h4>Heart Rate</h4>
-              <p>78 bpm</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Diagnostic List Section -->
-        <section class="diagnostic-list">
-          <h3>Diagnostic List</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Problem/Diagnosis</th>
-                <th>Description</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="diagnostic-list">
-              <!-- Data will be inserted here by JavaScript -->
-            </tbody>
-          </table>
-        </section>
-      </main>
-
-      <!-- Right sidebar for patient details and lab results -->
-      <aside class="patient-details">
-        <div class="patient-info">
-          <h3>Jessica Taylor</h3>
-          <p><strong>Date of Birth:</strong> August 23, 1996</p>
-          <p><strong>Gender:</strong> Female</p>
-          <p><strong>Contact Info:</strong> (415) 555-1234</p>
-          <p><strong>Emergency Contact:</strong> (415) 555-5678</p>
-          <p><strong>Insurance Provider:</strong> Sunrise Health Assurance</p>
-          <button>Show All Information</button>
-        </div>
-
-        <div class="lab-results">
-          <h3>Lab Results</h3>
-          <ul>
-            <li>Blood Tests <a href="#">Download</a></li>
-            <li>CT Scans <a href="#">Download</a></li>
-            <li>Radiology Reports <a href="#">Download</a></li>
-            <li>X-Rays <a href="#">Download</a></li>
-            <li>Urine Test <a href="#">Download</a></li>
-          </ul>
-        </div>
-      </aside>
+    <div class="navbar-left">
+        <img src="Icon.png/TestLogo.svg" alt="Logo" class="navbar-logo">
     </div>
 
-    <script>
-      import Chart from "chart.js/auto";
+    <div class="navbar-center">
+        <ul>
+            <li>
+                <img src="Icon.png/home_icon.svg" alt="Home Logo" class="home-logo">
+                <a><i class="icon-overview"></i>Overview</a>
+            </li>
+            <li>
+                <img src="Icon.png/patient.svg" alt="patient Logo" class="pateint-logo">
+                <a><i class="icon-overview"></i>Patients</a>
+            </li>
+            <li>
+                <img src="Icon.png/calender.svg" alt="calender Logo" class="calender-logo">
+                <a><i class="icon-overview"></i>Schedule</a>
+            </li>
+            <li>
+                <img src="Icon.png/chat_bubble.svg" alt="chat Logo" class="chat-logo">
+                <a><i class="icon-overview"></i>Message</a>
+            </li>
+            <li>
+                <img src="Icon.png/credit_card.svg" alt="credit Logo" class="credit-logo">
+                <a><i class="icon-overview"></i>Transactions</a>
+            </li>
+            
+        </ul>
+    </div>
 
-      // Fetching Jessica Taylor's data
-      fetch(
-        "https://fedskillstest.coalitiontechnologies.workers.dev/patient/jessica-taylor"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const patient = data[0]; // Assuming the first object in the array is the one needed
-          const diagnosisHistory = patient.diagnosis_history;
+    <div class="navbar-right">
+        <img src="Icon.png/senior-woman-doctor.png" alt="Doctor Photo" class="doctor-photo">
+        <span>Dr. Jose Simmons</span>
+        <span class="doctor-title">General Practitioner</span>
+        <img src="Icon.png/settings.svg" alt="Settings" class="settings-icon">
+        <img src="Icon.png/more_vert.svg" alt="More" class="more_vert">
+    </div>
+  </nav>
 
-          // Extract systolic, diastolic, and month values
-          const systolic = diagnosisHistory.map(
-            (entry) => entry.blood_pressure.systolic.value
-          );
-          const diastolic = diagnosisHistory.map(
-            (entry) => entry.blood_pressure.diastolic.value
-          );
-          const months = diagnosisHistory.map((entry) => entry.month);
+  <div class="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-heading">Patients</span>
+    <img src="Icon.png/search.svg" alt="Search Icon" class="search-icon">
+  </div>
+  <!-- Patient list  -->
+  <ul class="patient-list">
+    <li class="patient-item">
+        <img src="Icon.png/Layer 8@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Emilly Williams</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 18</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 1@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Ryan Johnson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 45</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 3@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Brandon Mitchell</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 36</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 2@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">jessica Taylor</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 28</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 6@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Samantha Johnson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 56</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 12@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Ashley Martinez</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 54</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 10@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Olivia Brown</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Female: 32</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 9@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Tyler Davis</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 19</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 4@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Kevin Anderson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 30</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 5@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Dylan Thompson</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 36</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/Layer 7@2x.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Nathan Evans</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 58</span>
+        </div>
+    </li>
+    <li class="patient-item">
+        <img src="Icon.png/pexels-photo.png" alt="Patient Image" class="patient-image">
+        <div class="patient-info">
+            <span class="patient-name">Mike Nolan</span>
+            <img src="Icon.png/more_horiz.svg" alt="More Options" class="three-dots">
+            <span class="patient-details">Male: 31</span>
+        </div>
+    </li>
+    
+  </ul>
+</div>
 
-          // Create the chart for Blood Pressure
-          const ctx = document
-            .getElementById("bloodPressureChart")
-            .getContext("2d");
-          new Chart(ctx, {
-            type: "line",
+       <div class="right-sidebar">
+        <img id="profile-photo" src="" alt="Profile Photo" class="profile-photo">
+        <h3 id="profile-name" class="profile-name"></h3>
+        <p><strong>Date of Birth:</strong> <span id="dob" class="info"></span></p>
+        <p><strong>Gender:</strong> <span id="gender" class="info"></span></p>
+        <p><strong>Contact Info:</strong> <span id="contact-info" class="info"></span></p>
+        <p><strong>Emergency Contact:</strong> <span id="emergency-contact" class="info"></span></p>
+        <p><strong>Insurance Provider:</strong> <span id="insurance-provider" class="info"></span></p>
+        <button class="info-button">Show All Information</button>
+    </div>
+    
+     <div class="lab-results-sidebar">
+        <h2 class="sidebar-heading">Lab Results</h2>
+        <table class="results-table">
+            <tr>
+                <td class="result-text">Blood Tests</td>
+                <td class="result-icon"></td>
+            </tr>
+            <tr>
+                <td class="result-text">CT Scans</td>
+                <td class="result-icon"></td>
+            </tr>
+            <tr>
+                <td class="result-text">X-Rays</td>
+                <td class="result-icon"></td>
+            </tr>
+            <tr>
+                <td class="result-text">MRI</td>
+                <td class="result-icon"></td>
+            </tr>
+            <tr>
+                <td class="result-text">Ultrasounds</td>
+                <td class="result-icon"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="diagnosis-card">
+    <h2>Diagnosis History</h2>
+    <div class="blood-pressure-card">
+        <div class="blood-pressure-header">
+            <h3>Blood Pressure</h3>
+            <p>Last 6 months</p>
+        </div>
+        <canvas id="bloodPressureChart"></canvas>
+        <div class="blood-pressure-values">
+            <div>
+                <span class="systolic-value"></span>
+                <span class="pressure-type">Systolic</span>
+                <span class="pressure-level systolic-level"></span>
+            </div>
+            <div>
+                <span class="diastolic-value"></span>
+                <span class="pressure-type">Diastolic</span>
+                <span class="pressure-level diastolic-level"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <script>
+    const username = 'coalition';
+    const password = 'skills-test';
+    const auth = btoa(`${username}:${password}`);
+
+    // Fetch the API data
+    fetch("https://fedskillstest.coalitiontechnologies.workers.dev", {
+        headers: {
+            'Authorization': `Basic ${auth}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const patient = data[3]; // Assuming the data is for the first patient
+          // Update HTML with fetched data
+          document.getElementById('profile-photo').src = patient.profile_picture;
+          document.getElementById('profile-name').textContent = patient.name;
+          document.getElementById('dob').textContent = new Date(patient.date_of_birth).toLocaleDateString('en-US');
+          document.getElementById('gender').textContent = patient.gender;
+          document.getElementById('contact-info').textContent = patient.phone_number;
+          document.getElementById('emergency-contact').textContent = patient.emergency_contact;
+          document.getElementById('insurance-provider').textContent = patient.insurance_type;
+        // Blood pressure values over the last months
+        const diagnosisHistory = patient.diagnosis_history;
+
+        const months = diagnosisHistory.map(item => `${item.month}, ${item.year}`);
+        const systolicValues = diagnosisHistory.map(item => item.blood_pressure.systolic.value);
+        const diastolicValues = diagnosisHistory.map(item => item.blood_pressure.diastolic.value);
+
+        // Update the systolic and diastolic numbers on the card
+        document.querySelector('.systolic-value').textContent = diagnosisHistory[0].blood_pressure.systolic.value;
+        document.querySelector('.systolic-level').textContent = diagnosisHistory[0].blood_pressure.systolic.levels;
+
+        document.querySelector('.diastolic-value').textContent = diagnosisHistory[0].blood_pressure.diastolic.value;
+        document.querySelector('.diastolic-level').textContent = diagnosisHistory[0].blood_pressure.diastolic.levels;
+
+        // Render the chart
+        const ctx = document.getElementById('bloodPressureChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
             data: {
-              labels: months, // X-axis labels (Months)
-              datasets: [
-                {
-                  label: "Systolic",
-                  data: systolic,
-                  borderColor: "rgb(255, 99, 132)",
-                  fill: false,
-                },
-                {
-                  label: "Diastolic",
-                  data: diastolic,
-                  borderColor: "rgb(54, 162, 235)",
-                  fill: false,
-                },
-              ],
+                labels: months,
+                datasets: [
+                    {
+                        label: 'Systolic',
+                        data: systolicValues,
+                        borderColor: '#f56565',
+                        fill: false,
+                        tension: 0.4,
+                        pointBackgroundColor: '#f56565',
+                    },
+                    {
+                        label: 'Diastolic',
+                        data: diastolicValues,
+                        borderColor: '#4299e1',
+                        fill: false,
+                        tension: 0.4,
+                        pointBackgroundColor: '#4299e1',
+                    }
+                ]
             },
             options: {
-              responsive: true,
-              scales: {
-                x: {
-                  display: true,
-                  title: {
-                    display: true,
-                    text: "Month",
-                  },
-                },
-                y: {
-                  display: true,
-                  title: {
-                    display: true,
-                    text: "Blood Pressure (mmHg)",
-                  },
-                  suggestedMin: 50,
-                  suggestedMax: 200,
-                },
-              },
-            },
-          });
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 60,
+                        max: 180
+                    }
+                }
+            }
         });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
 
-      //     // Populate diagnostic list
-      //     const diagnosticList = document.getElementById("diagnostic-list");
-      //     data.diagnoses.forEach((diagnosis) => {
-      //       const row = document.createElement("tr");
-      //       row.innerHTML = `
-      //                   <td>${diagnosis.problem}</td>
-      //                   <td>${diagnosis.description}</td>
-      //                   <td>${diagnosis.status}</td>
-      //               `;
-      //       diagnosticList.appendChild(row);
-      //     });
-      //   })
-      //   .catch((error) => console.error("Error fetching data:", error));
+
     </script>
   </body>
 </html>
