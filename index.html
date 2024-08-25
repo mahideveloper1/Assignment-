@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Dashboard</title>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
   </head>
   <body>
-    <!-- <div class="container"> -->
             <main class="main-content">
-         <!-- Top navigation bar  -->
+         <!-- navigation bar  -->
         <nav class="navbar">
     <div class="navbar-left">
         <img src="Icon.png/TestLogo.svg" alt="Logo" class="navbar-logo">
@@ -207,13 +204,14 @@
         </div>
          <div class="blood-pressure-card">
         <canvas id="bloodPressureChart" class="chart"></canvas>
-        <div class="blood-pressure-values">
+         <div class="blood-pressure-values">
             <div>
                 <span class="pressure-type">Systolic</span>
                 <span class="systolic-value"></span>
-            <img src="Icon.png/ArrowUp.svg" >
+                <img src="Icon.png/ArrowUp.svg" >
                 <span class="pressure-level systolic-level"></span>
             </div>
+
             <div>
                 <span class="pressure-type">Diastolic</span>
                 <span class="diastolic-value"></span>
@@ -229,20 +227,20 @@
    <div class="respirator-card">
   <img src="Icon.png/respiratory rate.svg" alt="Respirator Icon" class="respirator-image">
   <h3 class="respirator-heading">Respirator Rate</h3>
-  <p class="respirator-rate" id="respirator-rate">--</p>
-  <p class="respirator-status" id="respirator-status">--</p>
+  <p class="rate" id="respirator-rate">--</p>
+  <p class="status" id="respirator-status">--</p>
 </div>
    <div class="temp-card">
   <img src="Icon.png/temperature.svg" alt="Respirator Icon" class="respirator-image">
-  <h3 class="temp-heading">Temperature</h3>
-  <p class="temp-rate" id="temp-rate">--</p>
-  <p class="temp-status" id="temp-status">--</p>
+  <h3 class="respirator-heading">Temperature</h3>
+  <p class="rate" id="temp-rate">--</p>
+  <p class="status" id="temp-status">--</p>
 </div>
    <div class="heart-card">
   <img src="Icon.png/HeartBPM.svg" alt="Respirator Icon" class="respirator-image">
-  <h3 class="heart-heading">Heart Rate</h3>
-  <p class="heart-rate" id="heart-rate">--</p>
-  <p class="heart-status" id="heart-status">--</p>
+  <h3 class="respirator-heading">Heart Rate</h3>
+  <p class="rate" id="heart-rate">--</p>
+  <p class="status" id="heart-status">--</p>
 </div>
 </div>
 
@@ -264,10 +262,6 @@
     </table>
 </div>
 
-
-   
-
-
-   <script src="script.js"></script>
+<script src="script.js"></script>
   </body>
 </html>

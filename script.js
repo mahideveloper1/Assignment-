@@ -65,10 +65,12 @@ function updateDiagnosisHistory(patient) {
     diagnosisHistory[0].respiratory_rate.value;
   document.getElementById("respirator-status").textContent =
     diagnosisHistory[0].respiratory_rate.levels;
+
   document.getElementById("temp-rate").textContent =
     diagnosisHistory[0].temperature.value;
   document.getElementById("temp-status").textContent =
     diagnosisHistory[0].temperature.levels;
+
   document.getElementById("heart-rate").textContent =
     diagnosisHistory[0].heart_rate.value;
   document.getElementById("heart-status").textContent =
