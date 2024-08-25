@@ -443,28 +443,29 @@ h2 {
 }
 
 .diagnosis-card {
-  position: absolute;
-  top: 215px;
-  margin-left: 19px;
-  width: 726px;
-  height: 508px;
-  background: #f4f0fe 0% 0% no-repeat padding-box;
-  border-radius: 12px;
-  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
 }
 
 .blood-pressure-card {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 50%;
+  width: 80%;
 }
 
-/* Header for the blood pressure section */
 .blood-pressure-header {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 .blood-pressure-header h3 {
@@ -472,38 +473,47 @@ h2 {
   color: #072635;
 }
 
-.blood-pressure-header p {
+.blood-pressure-header h5 {
   font: normal normal medium 14px/19px Manrope;
   color: #072635;
+  /* margin-top: 5px; */
 }
 
-/* The chart container (left side) */
 #bloodPressureChart {
-  width: 60%; /* Take 60% of the available space */
-  height: 600px;
+  width: 600px;
+  height: 350px;
+  margin-right: 20px;
 }
 
-/* Container for blood pressure values (right side) */
+/* Flexbox for the pressure values */
 .blood-pressure-values {
-  width: 35%; /* Take 35% of the available space */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-left: 20px;
+  justify-content: flex-start; /* Align to top */
+  width: 350px;
+  margin-bottom: 10px;
+  margin-top: -70px;
 }
 
-/* Individual pressure value box (Systolic and Diastolic) */
+/* Each pressure value section (Systolic and Diastolic) */
 .blood-pressure-values div {
-  background: #f6f7f8;
   padding: 20px;
   border-radius: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: -30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-/* Styling for Systolic and Diastolic values */
+/* Styling for pressure types and values */
+.pressure-type {
+  font: normal normal medium 14px/19px Manrope;
+  color: #01f0d0;
+  text-transform: uppercase;
+}
+
 .systolic-value,
 .diastolic-value {
   font: normal normal bold 36px/48px Manrope;
@@ -511,149 +521,62 @@ h2 {
   margin-bottom: 10px;
 }
 
-.pressure-type {
-  font: normal normal medium 14px/19px Manrope;
-  color: #01f0d0;
-  text-transform: uppercase;
-}
-
 .pressure-level {
   font: normal normal bold 14px/19px Manrope;
   color: #072635;
 }
 
-/* Limit the X-axis to show only 5 values */
-.chartjs-render-monitor {
-  max-width: 100%;
+/* Ensuring no extra CSS overrides layout */
+.blood-pressure-values div span {
+  display: block;
 }
 
-/* 6 Months Text */
-.blood-pressure-header p {
-  position: absolute;
-  top: 236px;
-  left: 772px;
-  width: 92px;
-  height: 19px;
-  font: normal normal normal 14px/19px Manrope;
-  letter-spacing: 0px;
-  color: #072635;
-  text-align: right;
-  opacity: 1;
+.three-cards {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly between cards */
+  gap: 2px; /* Add some space between the cards */
+  /* padding: 20px; */
+  flex-wrap: wrap; /* Cards will wrap if screen is small */
 }
-
-/* Systolic Box */
-/* .systolic-box {
-  position: absolute;
-  top: 231px;
-  left: 939px;
-  width: 149px;
-  height: 84px;
-  background-color: #fff;
-  border-radius: 8px;
-  opacity: 1;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-} */
-
-/* Diastolic Box */
-/* .diastolic-box {
-  position: absolute;
-  top: 348px;
-  left: 939px;
-  width: 145px;
-  height: 84px;
-  background-color: #fff;
-  border-radius: 8px;
-  opacity: 1;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-} */
-
-/* Number in Both Boxes */
-.systolic-value,
-/* .diastolic-value {
-  position: absolute;
-  top: 375px;
-  left: 939px;
-  width: 25px;
-  height: 30px;
-  font: normal normal bold 22px/30px Manrope;
-  letter-spacing: 0px;
-  color: #072635;
-  text-align: left;
-  text-transform: capitalize;
-  opacity: 1;
-} */
-
-/* Graph */
-/* .blood-pressure-chart {
-  position: absolute;
-  top: 283px;
-  left: 483px;
-  width: 217px;
-  height: 187px;
-  opacity: 1;
-} */
-
-/* First Graph Line (Systolic) */
-/* .systolic-line {
-  position: absolute;
-  top: 314px;
-  left: 492px;
-  width: 40px;
-  height: 77px;
-  border: 2px solid #c26eb4;
-  opacity: 1;
-} */
-
-/* Second Graph Line (Diastolic) */
-/* .diastolic-line {
-  position: absolute;
-  top: 393px;
-  left: 492px;
-  width: 405px;
-  height: 69px;
-  border: 2px solid #7e6cab;
-  opacity: 1;
-} */
 
 .respirator-card {
   position: absolute;
-  top: 733px;
-  left: 437px;
+  top: 603px;
+  left: 400px;
   width: 207px;
   height: auto;
   font-family: "Manrope", sans-serif;
-  background-color: #fff;
+  background-color: #e0f3fa;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: left;
 }
 
 .temp-card {
-  margin-top: 533px;
+  top: 550px;
   margin-left: 286px;
   width: 228px;
-  height: 200px;
+  height: auto;
   background: #ffe6e9 0% 0% no-repeat padding-box;
-  border-radius: 12px;
+  border-radius: 8px;
   opacity: 1;
 }
 
 .heart-card {
-  margin-top: 533px;
+  top: 533px;
   left: 935px;
   width: 228px;
-  height: 200px;
+  height: auto;
   background: #ffe6f1 0% 0% no-repeat padding-box;
-  border-radius: 12px;
+  border-radius: 8px;
   opacity: 1;
 }
 .respirator-image {
-  width: 24px;
-  height: 24px;
+  width: 96px;
+  height: 96px;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .respirator-heading {
@@ -679,12 +602,6 @@ h2 {
   font-size: 16px;
   color: #072635;
   opacity: 0.8;
-}
-
-.three-cards {
-  display: flex;
-  justify-content: space-between; /* Ensures even spacing between cards */
-  gap: 20px; /* Adjust the gap between the cards */
 }
 
 /* Wrapper for the entire diagnostic card */

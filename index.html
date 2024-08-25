@@ -196,28 +196,35 @@
 
     <div class="big-card">
         <h2>Diagnosis History</h2>
+
     <div class="diagnosis-card">
     
-    <div class="blood-pressure-card">
+   
         <div class="blood-pressure-header">
             <h3>Blood Pressure</h3>
-            <p>Last 6 months</p>
+            <h5>Last 6 months</h5>
+            <img src="Icon.png/expand.svg" >
         </div>
-        <canvas id="bloodPressureChart"></canvas>
+         <div class="blood-pressure-card">
+        <canvas id="bloodPressureChart" class="chart"></canvas>
         <div class="blood-pressure-values">
             <div>
-                <span class="systolic-value"></span>
                 <span class="pressure-type">Systolic</span>
+                <span class="systolic-value"></span>
+            <img src="Icon.png/ArrowUp.svg" >
                 <span class="pressure-level systolic-level"></span>
             </div>
             <div>
-                <span class="diastolic-value"></span>
                 <span class="pressure-type">Diastolic</span>
+                <span class="diastolic-value"></span>
+            <img src="Icon.png/ArrowDown.svg"  >
                 <span class="pressure-level diastolic-level"></span>
             </div>
+            
         </div>
     </div>
     </div>
+
    <div class="three-cards">
    <div class="respirator-card">
   <img src="Icon.png/respiratory rate.svg" alt="Respirator Icon" class="respirator-image">

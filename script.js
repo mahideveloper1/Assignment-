@@ -51,10 +51,10 @@ function updateProfile(patient) {
 function updateDiagnosisHistory(patient) {
   const diagnosisHistory = patient.diagnosis_history;
 
-  document.querySelector(".systolic-value").textContent =
-    diagnosisHistory[0].blood_pressure.systolic.value;
   document.querySelector(".systolic-level").textContent =
     diagnosisHistory[0].blood_pressure.systolic.levels;
+  document.querySelector(".systolic-value").textContent =
+    diagnosisHistory[0].blood_pressure.systolic.value;
 
   document.querySelector(".diastolic-value").textContent =
     diagnosisHistory[0].blood_pressure.diastolic.value;
@@ -123,8 +123,29 @@ function updateLabResults(patient) {
 }
 
 // Render blood pressure chart
+// Function to format month numbers to abbreviated month names
+function formatMonth(monthName) {
+  const monthMap = {
+    January: "Jan",
+    February: "Feb",
+    March: "Mar",
+    April: "Apr",
+    May: "May",
+    June: "Jun",
+    July: "Jul",
+    August: "Aug",
+    September: "Sep",
+    October: "Oct",
+    November: "Nov",
+    December: "Dec",
+  };
+  return monthMap[monthName] || monthName; // Return abbreviated form or the same month if not found
+}
+// Render blood pressure chart
 function renderBloodPressureChart(diagnosisHistory) {
-  const months = diagnosisHistory.map((item) => `${item.month}, ${item.year}`);
+  const months = diagnosisHistory.map(
+    (item) => `${formatMonth(item.month)}, ${item.year}`
+  );
   const systolicValues = diagnosisHistory.map(
     (item) => item.blood_pressure.systolic.value
   );
@@ -158,6 +179,14 @@ function renderBloodPressureChart(diagnosisHistory) {
     },
     options: {
       scales: {
+        x: {
+          ticks: {
+            maxTicksLimit: 7,
+            autoSkip: true,
+            maxRotation: 0,
+            minRotation: 0,
+          },
+        },
         y: {
           beginAtZero: false,
           min: 60,
