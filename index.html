@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
+  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
   </head>
@@ -162,23 +163,24 @@
     <img id="profile-photo" src="" alt="Profile Photo" class="profile-photo">
     <h3 id="profile-name" class="profile-name"></h3>
     
-    <p><strong class="icon dob-icon">Date of Birth:</strong><br> 
-        <span id="dob" class="info"></span>
-    </p>
+    <p class="dob-wrapper">
+  <span class="icon dob-icon">Date of Birth:</span>
+  <span id="dob" class="info"></span>
+</p>
     
-    <p><strong class="icon gender-icon">Gender:</strong><br> 
+    <p class="dob-wrapper"><span class="icon gender-icon">Gender:</span>
         <span id="gender" class="info"></span>
     </p>
     
-    <p><strong class="icon contact-icon">Contact Info:</strong><br> 
+    <p class="dob-wrapper"><span class="icon contact-icon">Contact Info:</span>
         <span id="contact-info" class="info"></span>
     </p>
     
-    <p><strong class="icon emergency-icon">Emergency Contact:</strong><br> 
+    <p class="dob-wrapper"><span class="icon emergency-icon">Emergency Contact:</span> 
         <span id="emergency-contact" class="info"></span>
     </p>
     
-    <p><strong class="icon insurance-icon">Insurance Provider:</strong><br> 
+    <p class="dob-wrapper"><span class="icon insurance-icon">Insurance Provider:</span>
         <span id="insurance-provider" class="info"></span>
     </p>
     
@@ -190,6 +192,8 @@
     <table class="results-table" id="lab-results-table">
     </table>
 </div>
+
+<!-- Centre section -->
 
     <div class="big-card">
         <h2>Diagnosis History</h2>
@@ -213,7 +217,7 @@
             </div>
 
             <div>
-                <span class="pressure-type">Diastolic</span>
+                <span class="diastolic-pressure-type">Diastolic</span>
                 <span class="diastolic-value"></span>
             <img src="Icon.png/ArrowDown.svg"  >
                 <span class="pressure-level diastolic-level"></span>
@@ -257,11 +261,13 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Diagnostic data will be populated here -->
         </tbody>
+
     </table>
 </div>
 
+<!-- Script -->
+ 
 <script src="script.js"></script>
   </body>
 </html>

@@ -1,8 +1,6 @@
-/* Whole Page Background */
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
   background: #f6f7f8;
 }
 
@@ -43,15 +41,14 @@ body {
 .navbar-center ul {
   list-style: none;
   display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
+  width: 500px;
+  gap: 130px;
+  margin-right: 100px;
 }
 
 .navbar-center ul li {
   display: flex;
   align-items: center;
-  margin-right: 30px;
 }
 
 .navbar-center ul li a {
@@ -61,10 +58,11 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-left: 7px;
 }
 
 .navbar-center ul li img {
-  margin-right: 8px;
+  margin-left: -75px;
 }
 
 /* Navbar Right Styles */
@@ -77,8 +75,6 @@ body {
 .navbar-right .doctor-photo {
   width: 44px;
   height: 44px;
-  /* background: transparent url("Icon.png/senior-woman-doctor.png") no-repeat
-    center center; */
   background-size: cover;
   margin-right: 10px;
 }
@@ -157,21 +153,20 @@ body {
   top: 122px;
   bottom: 100px;
   left: 18px;
-  width: 260px;
+  width: 290px;
   height: 1000px;
   background: #ffffff;
   border-radius: 16px;
   opacity: 1;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* overflow-y: auto; */
 }
 
 /* Left Sidebar Header Styles */
 .sidebar-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Space below the header */
+  margin-bottom: 20px;
 }
 
 .sidebar-heading {
@@ -184,8 +179,8 @@ body {
 
 .search-icon {
   position: absolute;
-  top: 30px;
-  left: 250px;
+  top: 48px;
+  left: 280px;
   width: 18px;
   height: 18px;
 }
@@ -201,9 +196,9 @@ body {
   font: normal normal 14px/19px Manrope;
   letter-spacing: 0px;
   color: #072635;
-  margin-bottom: 10px; /* Space between list items */
-  padding: 10px; /* Optional padding for better spacing */
-  border-bottom: 1px solid #e0e0e0; /* Optional border between items */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* Patient List Styles */
@@ -215,29 +210,29 @@ body {
 
 /* Patient List Item Styles */
 .patient-item {
-  display: flex; /* Align items horizontally */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 20px; /* Space between list items */
-  padding: 10px; /* Padding around each item */
-  border-bottom: 1px solid #e0e0e0; /* Border for separation */
-  position: relative; /* Position relative to place the three-dots image absolutely */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
 }
 
 /* Patient Image Styles */
 .patient-image {
   width: 48px;
   height: 48px;
-  border-radius: 50%; /* Make image circular */
+  border-radius: 50%;
   background: transparent;
-  margin-right: 15px; /* Space between image and text */
+  margin-right: 15px;
   opacity: 1;
 }
 
 /* Patient Info Styles */
 .patient-info {
   display: flex;
-  flex-direction: column; /* Align text elements vertically */
-  justify-content: center; /* Center align text vertically */
+  flex-direction: column;
+  justify-content: center;
   flex: 1;
 }
 
@@ -246,18 +241,18 @@ body {
   font: normal normal bold 14px/19px Manrope;
   letter-spacing: 0px;
   color: #072635;
-  margin-bottom: 5px; /* Space between name and details */
+  margin-bottom: 5px;
   opacity: 1;
 }
 
 .three-dots {
   width: 18px;
-  height: 18px; /* Adjust height if needed */
-  position: absolute; /* Absolute positioning to place it at the end */
-  right: 20px; /* Adjust according to the desired spacing from the right edge */
-  top: 50%; /* Center vertically within the patient item */
-  transform: translateY(-50%); /* Adjust vertical alignment */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 /* Patient Details Styles */
@@ -271,9 +266,9 @@ body {
 /* Styles for the right sidebar */
 .right-sidebar {
   position: absolute;
-  top: 108px;
-  left: 1216px;
-  width: 240px;
+  top: 122px;
+  right: 18px;
+  width: 290px;
   height: 650px;
   background: #ffffff;
   border-radius: 16px;
@@ -282,47 +277,64 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* overflow-y: auto;  */
 }
 
 /* images */
-p strong {
+p .icon {
   display: inline-block;
-  padding-left: 40px;
+  padding-left: 60px;
   background-position: left center;
   background-repeat: no-repeat;
-  background-size: 24px 24px;
   font: normal normal medium 14px/19px Manrope;
 }
 
 .dob-icon {
   background-image: url("Icon.png/BirthIcon.svg");
+  background-size: 35px 35px;
+  width: 100px;
+  height: 35px;
+  padding-bottom: 5px;
 }
 
 .gender-icon {
   background-image: url("Icon.png/FemaleIcon.svg");
+  background-size: 35px 35px;
+  width: 100px;
+  height: 35px;
+  padding-bottom: 5px;
 }
 
 .contact-icon {
   background-image: url("Icon.png/PhoneIcon.svg");
+  background-size: 35px 35px;
+  width: 100px;
+  height: 35px;
+  padding-bottom: 5px;
 }
 
 .emergency-icon {
   background-image: url("Icon.png/PhoneIcon.svg");
+  background-size: 35px 35px;
+  width: 150px;
+  height: 35px;
+  padding-bottom: 5px;
 }
 
 .insurance-icon {
   background-image: url("Icon.png/InsuranceIcon.svg");
+  background-size: 35px 35px;
+  width: 150px;
+  height: 35px;
+  padding-bottom: 5px;
 }
 
 /* Profile photo styles */
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   align-self: center;
   background-size: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 /* Profile name styles */
@@ -340,16 +352,22 @@ p {
   font: normal normal medium 14px/19px Manrope;
   letter-spacing: 0px;
   color: #072635;
-  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 /* Info span styles */
 .info {
   font: normal normal bold 14px/19px Manrope;
-  letter-spacing: 0px;
-  margin-left: 40px;
+  margin-left: 60px;
   color: #0d0d0e;
   text-transform: capitalize;
+  margin-top: -25px;
+}
+
+.dob-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Button styles */
@@ -367,21 +385,20 @@ p {
   transition: background 0.3s ease;
 }
 
-/* Button hover state */
 .info-button:hover {
-  background: #00d4c0; /* Slightly darker shade for hover effect */
+  background: #00d4c0;
 }
 
 /* lab result */
 .lab-results-sidebar {
   position: absolute;
-  top: 810px;
-  left: 1215px;
-  width: 260px;
-  height: 300px;
+  top: 845px;
+  width: 290px;
+  right: 18px;
+  height: 250px;
   background: #ffffff;
   border-radius: 16px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -389,7 +406,8 @@ p {
   font: normal normal 800 24px/33px Manrope;
   color: #072635;
   text-align: left;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-left: 2px;
 }
 
 .results-table {
@@ -403,13 +421,13 @@ p {
 }
 
 .result-text {
-  font: normal normal normal 13px/18px Manrope;
+  font: normal normal normal 15px/18px Manrope;
   color: #072635;
 }
 
 .result-icon {
-  width: 8px;
-  height: 8px;
+  width: 1px;
+  height: 1px;
   background: url("Icon.png/download.svg") no-repeat center center;
   background-size: contain;
 }
@@ -417,9 +435,9 @@ p {
 /* Main Card */
 .big-card {
   margin-top: 120px;
-  margin-left: 355px;
+  margin-left: 370px;
   width: 780px;
-  height: 773px;
+  height: 673px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff;
   border-radius: 16px;
@@ -430,9 +448,6 @@ h2 {
   margin-top: 108px;
   margin-left: 12px;
   padding-top: 16px;
-  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
-    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
-    var(--unnamed-font-family-manrope);
   letter-spacing: var(--unnamed-character-spacing-0);
   color: var(--unnamed-color-072635);
   text-align: left;
@@ -458,6 +473,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  height: 200px;
 }
 
 .blood-pressure-header {
@@ -465,7 +481,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 60%;
-  margin-bottom: 10px;
+  margin-top: -20px;
 }
 
 .blood-pressure-header h3 {
@@ -475,32 +491,29 @@ h2 {
 
 .blood-pressure-header h5 {
   font: normal normal medium 14px/19px Manrope;
-  color: #072635;
-  /* margin-right: 10px; */
-  margin-right: -240px;
+  color: #555a5e;
+  margin-left: 10px;
 }
 
 .blood-pressure-header img {
   margin-left: 0;
-  margin-right: -80px;
+  margin-left: -150px;
 }
 #bloodPressureChart {
-  width: 600px;
-  height: 350px;
-  margin-right: 20px;
+  width: 650px;
+  height: 390px;
+  margin-right: 40px;
 }
 
-/* Flexbox for the pressure values */
 .blood-pressure-values {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align to top */
+  justify-content: flex-start;
   width: 350px;
   margin-bottom: 10px;
   margin-top: -70px;
 }
 
-/* Each pressure value section (Systolic and Diastolic) */
 .blood-pressure-values div {
   padding: 20px;
   border-radius: 16px;
@@ -516,41 +529,67 @@ h2 {
   content: "";
   width: 8px;
   height: 8px;
-  background-color: #4912cb; /* Dot color */
+  background-color: #e66fd2;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: -15px;
+  margin-top: 5px;
+  /* top: 50%; */
+}
+
+.diastolic-pressure-type::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #8c6fe6;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -15px;
+  margin-top: 5px;
 }
 
 .pressure-type {
-  font: normal normal medium 14px/19px Manrope;
-  color: #01f0d0;
+  font: normal normal medium 18px/29px Manrope;
+  color: #072635;
+  font-weight: bold;
   text-transform: uppercase;
+  margin-top: 20px;
+  margin-right: 45px;
+}
+
+.diastolic-pressure-type {
+  font: normal normal medium 18px/29px Manrope;
+  color: #072635;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 45px;
 }
 
 .blood-pressure-values div:not(:last-child) {
-  border-bottom: 1px solid #ddd; /* Light gray line */
+  border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
 .systolic-value,
 .diastolic-value {
-  font: normal normal bold 36px/48px Manrope;
+  font: normal normal bold 26px/48px Manrope;
   color: #072635;
   margin-bottom: 10px;
+  margin-right: 110px;
 }
 
 .pressure-level {
   font: normal normal bold 14px/19px Manrope;
-  color: #072635;
+  color: #525658;
   display: flex;
   align-items: center;
+  margin-top: -12px;
+  width: 200px;
 }
 
 .blood-pressure-values img {
-  margin-left: 5px;
+  margin-right: 145px;
 }
 
 .blood-pressure-values div span {
@@ -566,7 +605,7 @@ h2 {
 
 .respirator-card {
   position: absolute;
-  top: 603px;
+  top: 503px;
   left: 400px;
   width: 215px;
   height: 262px;
@@ -575,7 +614,7 @@ h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: left;
-  margin-left: -24px;
+  margin-left: -6.5px;
   margin-top: 10px;
 }
 
@@ -648,7 +687,7 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 740px;
   margin: auto;
-  margin-left: 359px;
+  margin-left: 370px;
   margin-top: 25px;
 }
 
